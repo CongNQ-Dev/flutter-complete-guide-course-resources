@@ -5,6 +5,7 @@ import 'StyledText.dart';
 class GradientContainer extends StatelessWidget {
   const GradientContainer(this.colors, {super.key});
   final List<Color> colors;
+  void rollDice() {}
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,10 +16,17 @@ class GradientContainer extends StatelessWidget {
             end: Alignment.bottomRight),
       ),
       child: Center(
-          child: Image.asset(
-        "assets/images/dice-images/dice-1.png",
-        width: 200,
-      )),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              "assets/images/dice-images/dice-1.png",
+              width: 200,
+            ),
+            ElevatedButton(onPressed: rollDice, child: Text("Roll Dice"))
+          ],
+        ),
+      ),
     );
   }
 }
